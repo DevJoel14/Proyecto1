@@ -1,0 +1,43 @@
+@use 'base/variables' as v;
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:after, *:before {
+  box-sizing: inherit;  
+}
+
+body {
+    font-family: v.$fuenteSecundario;
+    font-size: 1.6rem;
+}
+
+[class$="__contenedor"] {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: v.$negro;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+h1, h2, h3 {
+   color: v.$blanco;
+   margin: 0;
+}

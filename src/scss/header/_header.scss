@@ -1,0 +1,55 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.inicio {
+    background-color: v.$primario;
+    width: 100vw;
+    
+    &__headerFondo {
+        height:55rem;
+        background-image: url(../img/f7.jpg);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 100% calc(100% - 8rem);
+
+        position: relative;
+        padding: 1rem 0 0;
+        z-index: 10;
+        @include m.desktop { 
+            height: 80rem;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 7.9rem;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #00000078; /* esta fallando */
+        }
+    }
+    &__contenedor {
+        background-color: v.$primario;
+        padding: .5rem 0 0 0;
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__nombre {
+        color: transparent;
+        background-image: linear-gradient(to right, #008000, #ffffff);
+        background-clip: text;
+        font-weight: 700;
+        font-size: 3.5rem;
+        font-family: v.$fuenteLogo;
+    }
+
+    &__check {
+        display: none;
+    }
+
+}

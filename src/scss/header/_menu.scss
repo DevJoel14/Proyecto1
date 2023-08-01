@@ -1,0 +1,31 @@
+@use 'base/mixin' as m;
+@use 'base/variables' as v;
+
+.inicio__check:checked ~ .navegacion{
+    display: block;
+    transform: translate(100%);
+}
+.inicio__check:checked + .inicio__label > img{
+    display: none;
+}
+.inicio__check:checked + .inicio__label::before {
+    display: block;
+}
+.inicio__label {
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    @include m.tablet {
+        display: none;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url(/build/img/Icon/menu_c.svg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: none;
+    }
+}

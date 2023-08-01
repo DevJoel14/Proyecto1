@@ -1,0 +1,68 @@
+@use 'base/mixin' as m;
+@use 'base/variables' as v;
+
+.navegacion {
+    position: absolute;
+    left: -50%;
+    top: 8rem;
+    width: 50%;
+    height: 47rem;
+    padding: 2rem 0;
+
+    z-index: 100;
+    background-color: v.$primario;
+    transition: all .6s linear;
+
+
+    @include m.tablet {
+        position: static;
+        height: auto;
+        width: auto;
+        padding: 0;
+    }
+
+    &__conten {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        height: 100%;
+
+        @include m.tablet {
+            flex-direction: row;
+            column-gap: 3rem;
+        }
+    }
+
+
+}
+
+.navegacion__item {
+    position: relative;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: v.$blanco;
+
+    &:hover {
+        color: v.$secundario;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 5px;
+        bottom: -5px;
+        background-image: linear-gradient(to right, v.$negro , v.$grisClaro);
+        transition: width .5s;
+    }
+    &:hover::before {
+        width: 100%;
+        color: v.$cafeClaro;
+    }
+}
+
+.active::before {
+    color: v.$secundario;
+    font-weight: 900;
+}
